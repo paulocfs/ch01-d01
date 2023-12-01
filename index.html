@@ -4,39 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <!--leaflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
 
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
-    <title>Document</title>
+
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <title>CheckPoint 01</title>
 
     <style>
-      #map{ height: 180px; }
+      #map{ height: 300px; }
+
+      .alerta{
+        display: none;
+      }
+      .alerta.active{
+        display: block;
+        color: #E25664;
+      }
+
+      #list-local-bicicletarios{
+        display: flex;
+        
+      }
+
+      #list-local-bicicletarios > li{
+        font-size: 15px;
+        list-style: none;
+        
+      }
+
+      #list-local-bicicletarios li input[type="submit"]{
+        margin-left: 8px;
+        background-color: transparent;
+        color: #E56C00;
+        text-transform: capitalize;
+        font-size: 12px;
+        outline: none;
+        border: none;
+      }
     </style>
+
+
 </head>
 <body>
-    <input type="text" id="input-procurar-rua">
-    <input type="submit" id="btn-search-bike">
-    <ul id="list-local-bicicletarios"></ul>
-    <select id="limite-de-bicicletarios">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option selected>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>
-      <option>9</option>
-      <option>10</option>
-    </select>
+    <div class="container">
 
-    <div id="map"></div>
+
+      <div class="row mt-3 mb-3 border-bottom">
+        <h3>Bike Rio</h3>
+      </div>
+
+      <div class="row">
+
+          <div class="mb-3 col-sm">
+            <input type="text" id="input-procurar-rua" placeholder="Digite o endereço de busca aqui " class="form-control">
+            <small id="alerta-de-erro" class="mt-1 alerta">oi</small>
+          </div>
+
+          <div class="col-sm">
+            <input type="submit" id="btn-pesquisar-endereco" value= "pesquisar" class="btn btn-primary text-uppercase">
+          </div>
+
+          <div class="col-sm">
+            <label class="form-label form-label-sm me-3 ">Quantidade: </label>
+            <select id="limite-de-bicicletarios" class="">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option selected>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+
+
+
+
+      </div><!--row-->
+
+      <div class="row">
+
+          <div class="col">
+            <h6>Lista dos Bicicletários mais próximos:</h6>
+            <ul id="list-local-bicicletarios" class="list-group"></ul>
+          </div>
+
+
+          <div class="col">
+            <div id="map"></div>
+          </div>
+     
+      </div><!--row-->
+         
+     
+
+     
+    </div><!--container-->
 
     <script type="module" src="/js/script.js" ></script>
 </body>

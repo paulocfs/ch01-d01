@@ -1,6 +1,6 @@
 
 
-import calcularPorHaversine from "./calcularPorHaversine.js"
+import calcularPorEuclides from "./calcularPorEuclides.js"
 
 const calcularDistanciaDaRuaETodosBicicletarios = (dadosGeograficosDaRua, dadosGeograficosDosBicicletarios) => {
 
@@ -16,7 +16,7 @@ const calcularDistanciaDaRuaETodosBicicletarios = (dadosGeograficosDaRua, dadosG
 
             let longitudeNaApiBikeRio = +coordenada.geometry.coordinates[0]
             let latitudeNaApiBikeRio = +coordenada.geometry.coordinates[1]
-            const distancia =  calcularPorHaversine(latitudeDaRua,longitudeDaRua,latitudeNaApiBikeRio,longitudeNaApiBikeRio)     
+            const distancia =  calcularPorEuclides(latitudeDaRua,longitudeDaRua,latitudeNaApiBikeRio,longitudeNaApiBikeRio)     
 
             return {coordenada, distancia}
 

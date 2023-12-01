@@ -1,11 +1,13 @@
-
-import handleClickIniciarBuscaDosEnderecos from "./handleClickIniciarBuscaDosEnderecos.js";
+import handleClickIniciarBuscaDosEnderecos from "./handleClickIniciarBuscaDosEnderecos.js"
 
 
 //botão que aciona a busca da rua informada
-const btnSearchBike = document.querySelector('#btn-search-bike')
+const btnPesquisarEndereco = document.querySelector('#btn-pesquisar-endereco')
 
-btnSearchBike.addEventListener('click', handleClickIniciarBuscaDosEnderecos)
+btnPesquisarEndereco.addEventListener('click', handleClickIniciarBuscaDosEnderecos)
+
+
+
 
 
 
